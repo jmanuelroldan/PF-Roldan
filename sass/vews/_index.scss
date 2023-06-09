@@ -1,0 +1,183 @@
+@import "../utils/variables";
+@import "../utils/global";
+.main{
+    display: grid;
+    grid-template-areas: 
+    "hero"
+    "text"
+    "banner-index"
+    "explore";
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    &__hero{
+      font-family: "montserrat-alternate";
+      color: $font-color;
+      font-size: 1.5em;
+      padding: 50px 0 50px 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url(../assets/image/ambientes-de-departamentos-PLQNELCF6JFA7B7NZEB2OSTW44.JPG.webp);
+      height: 100%;
+      width: 100%;
+      grid-area: hero;   
+      &-content{
+        text-align: center;
+        h1{
+          padding-bottom: 30px;
+        }
+        img{
+          width: 300px;
+        }
+        h4{
+          padding-top: 30px;
+        }
+      }
+      }  
+      &__text{
+        font-family: montserrat;        
+        grid-area: text;
+        margin: 3em;
+      }     
+   &__banner-index{
+          width: 80%;
+          grid-area: banner-index;
+          &-desktop{
+              display: none;
+              a img:hover{
+                  opacity: $opacity;
+                  transition: $transition;
+                }
+
+            }
+          &-mobile{
+              margin-bottom: 3em;
+              a img{
+                  display: block;
+                  margin: auto;
+                  width: 80%;
+                  &:hover{
+                      opacity: $opacity;
+                      transition: $transition;
+                    }
+                }
+            }
+          }
+            &__gallery{
+              max-width: 700px;
+              grid-area: explore;
+              display: inline-block;
+              text-align: center;
+              &-title{
+                h4{
+                  font-family: "montserrat";
+                }
+              }
+              &-images{
+                display: flex;
+                gap: 10px;
+                flex-flow: column;
+                align-items: center;
+                margin-bottom: 25px;
+                img{
+                    width: 80%; 
+                    height: auto; 
+                    position:static;
+                    &:hover{
+                      box-shadow: $box-shadow;
+                      scale: 1.05;
+                      transition: $transition;
+                    }
+                  }
+              }
+            }
+          }
+  
+  
+  
+  @media screen and (min-width: $bpMedium) and (max-width: $bpMediumMax){
+      .main{
+          display: grid;
+          grid-template-areas: 
+          "hero hero"
+          "text text"
+          "banner-index explore";
+          &__hero{
+              font-size: 2.3em;
+              padding: 50px 25px 75px 50px;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url(../assets/image/ambientes-de-departamentos-PLQNELCF6JFA7B7NZEB2OSTW44.JPG.webp);
+              height: 100%;
+              width: 100%;
+              grid-area: hero;
+              &-content{
+                img{
+                  width: 400px;
+                }
+              }
+            }
+             &__banner-index-desktop{
+            margin-bottom: 3em;
+              display: grid;
+              place-items: center;
+              a img{
+                  display: block;
+                  margin: auto;
+                  width: 90%;
+                }
+            }
+          &__banner-index-mobile{
+              display: none;
+            }
+          &__gallery-images{
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              place-items: center;
+              }
+        } 
+      }  
+@media screen and (min-width: $bpLarge){
+          .main{
+              display: grid;
+              grid-template-areas: 
+              "hero hero"
+              "text text"
+              "banner-index explore";
+              &__hero{
+                  font-size: 3em;
+                  padding: 150px 0 150px 120px;
+                  position: relative;
+                  &-content{
+                    display: flex;
+                    flex-flow: column;
+                    align-items: baseline;  
+                    h4{
+                      transform: translate(20px);
+                    }         
+                    img{
+                      width: 400px;
+                    }
+                  }
+                }
+               &__banner-index-mobile{
+                  display: none;
+                }
+                &__banner-index-desktop{
+                  margin-bottom: 3em;
+                  display: grid;
+                  place-items: center;
+                  a img{
+                      display: block;
+                      margin: auto;
+                      width: 90%;
+                    }
+                }
+                &__gallery-images{
+                  @include templateGrid(2);
+                  gap: 10px;
+                  }
+            } 
+        }

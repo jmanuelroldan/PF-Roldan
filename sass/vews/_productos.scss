@@ -1,0 +1,90 @@
+@import "../utils/variables";
+
+.seccion{
+    font-family: "montserrat";
+    margin: 3em auto;
+    &__text{
+        padding-top: 25px;
+      }
+  }
+  .productos{
+    background-image: linear-gradient(rgba(245, 245, 245, 0.619),rgba(242, 242, 242, 0.564)), url(https://media.admagazine.com/photos/618a643dfb71c632cb9241fc/16:9/w_1280,c_limit/79658.jpg);
+    background-position: right ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+  .card{
+    @include flex(flex, column, wrap, space-between, center, 30px, 1em);
+    // padding: 1em;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // gap: 30px;
+    background-color: rgb(255 255 255 / 0.3);
+    backdrop-filter: blur(12px);
+    &__container{
+        width: 350px;
+        min-height: 300px;
+        position: relative;
+        background-color: $color-primary;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        padding: 20px;
+        font-family: montserrat;
+        &:hover {
+            background-color: $color-secondary;
+            transform: scale(1.03);
+            transition: $transition;          
+          }
+        &-button{ 
+          padding: 10px;
+          font-family: montserrat;
+          color: white;
+          border-radius: 10px;
+          margin-bottom: 15px;
+          background-color: black;
+          text-decoration: none;
+          &:hover{
+            background-color: $color-primary;
+            color: black;
+            box-shadow: $box-shadow;
+            transition: $transition;
+          }
+          }
+        &-image{
+            margin-bottom: 15px;
+            img{
+              border-radius: 5px;
+            }
+          }
+          &-title{
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-family: montserrat-alternate;
+          }
+      }   
+  }
+  @media screen and (min-width: $bpMedium) and (max-width: $bpMediumMax){
+    .card{
+      @include templateGrid(2);
+      align-items: end;
+      
+    }
+  }
+  .productos{
+    background-position: center center;
+  }
+  @media screen and (min-width: $bpLarge){
+    .productos{
+      background-position: center center;
+    }
+    .card{
+    @include templateGrid(3);
+   }
+  }

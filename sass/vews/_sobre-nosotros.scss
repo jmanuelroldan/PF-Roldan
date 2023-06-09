@@ -1,0 +1,66 @@
+@import "../utils/variables";
+
+.us{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: montserrat;
+    text-align: center;
+    &__name{
+        padding: 2em;
+        @include title (hsl(0, 0%, 0%), 1px 1px 2px rgb(100, 100, 100));
+      }
+      &__text{
+        padding: 0 10% 0 10%;
+      }
+      &__image img{
+        border-radius: 100%;
+        width: 300px;
+        margin-top: 3em;
+        &hover{
+          box-shadow: $box-shadow;
+        }
+      }
+  }
+
+  .multimedia{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    margin: 25px;
+    padding-top: 50px;
+    &__video{
+        width: 80%;
+        height: 250px; 
+      }
+  }
+  @media screen and (min-width: $bpMedium) and (max-width: $bpMediumMax){
+    .us{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    align-items: start;
+    }
+    .multimedia{
+      flex-direction: row;
+      &__map{
+        height: 300px;
+      }
+    }
+}
+
+  @media screen and (min-width: $bpLarge){
+    .multimedia{
+        flex-direction: row;
+        justify-content: space-evenly;
+        &__video{
+            width: 80%;
+            height: 250px;
+          }
+          &__map{
+            height: 250px;
+              width: 80%;
+            }
+      }
+  }

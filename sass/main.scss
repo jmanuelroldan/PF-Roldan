@@ -1,0 +1,13 @@
+// CHARSET
+@charset "utf-8";
+// IMPORTS
+@import "./utils/variables";
+@import "./utils/global";
+@import "./layout/header";
+@import "../sass/vews/index";
+@import "./vews/productos.scss";
+@import "./vews/promociones.scss";
+@import "./vews/sobre-nosotros.scss";
+@import "./vews/contacto.scss";
+@import "./layout/footer";
+
